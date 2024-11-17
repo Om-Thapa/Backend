@@ -10,8 +10,9 @@ app.get('/about', (req, res) => {
   res.status(200).send('About Page')
 })
 
+//.all lets us use all the http verbs like get, post, put, etc.
 app.all('*', (req, res) => {
-  res.status(404).send('<h1>resource not found</h1>')
+  res.status(404).send('<h1>Resource not found</h1>')
 })
 
 app.listen(5000, () => {
