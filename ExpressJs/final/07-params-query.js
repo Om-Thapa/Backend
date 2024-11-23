@@ -33,6 +33,7 @@ app.get('/api/products/:productID/reviews/:reviewID', (req, res) => {
   res.send('hello world')
 })
 
+//Note:We can have as many query string parameters as we want
 app.get('/api/v1/query', (req, res) => {
   // console.log(req.query)
   const { search, limit } = req.query

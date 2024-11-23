@@ -2,7 +2,12 @@ const express = require('express')
 const app = express()
 const logger = require('./logger')
 const authorize = require('./authorize')
+
+//Note : Here sequence b/w app.use and app.get matter
 //  req => middleware => res
+//app.use(logger) will apply logger to all the routes while
+//app.use('/api',logger) will apply logger to all router constaining /api, eg. /api/products , etc/
+
 app.use([logger, authorize])
 // api/home/about/products
 app.get('/', (req, res) => {
