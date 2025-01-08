@@ -68,6 +68,7 @@
         const nameValue = input.value
 
         try {
+          //When we do a http request with axios, it sends a huge object but we are interested in data property
           const { data } = await axios.post('/api/people', { name: nameValue })
           const h5 = document.createElement('h5')
           h5.textContent = data.person

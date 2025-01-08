@@ -4,9 +4,10 @@ let { people } = require('./data')
 
 // static assets
 app.use(express.static('./methods-public'))
-// parse form data
+// parsing form data sent in the url and make it available in the req.body
 app.use(express.urlencoded({ extended: false }))
 // parse json
+//express.json() midddleware helps us to access the req.body
 app.use(express.json())
 
 app.get('/api/people', (req, res) => {
